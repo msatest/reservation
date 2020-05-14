@@ -61,7 +61,6 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
@@ -115,7 +114,7 @@ stages:
                             failureThreshold: 10
                           livenessProbe:
                             httpGet:
-                              path: /products/1
+                              path: /reservations/1
                               port: 8080
                             initialDelaySeconds: 120
                             timeoutSeconds: 2
